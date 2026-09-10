@@ -87,7 +87,7 @@ export function SiteHeader() {
           <button
             type="button"
             className="mobile-toggle"
-            aria-label="Open navigation"
+            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={mobileOpen}
             data-hs-collapse="#site-mobile-navigation"
             onClick={() => setMobileOpen((open) => !open)}
@@ -103,15 +103,16 @@ export function SiteHeader() {
         data-open={mobileOpen ? "true" : "false"}
         className={`hs-collapse mobile-navigation ${mobileOpen ? "is-open" : ""}`}
       >
-        <div className="shell mobile-nav-inner">
-          <p className="mobile-nav-label">Products</p>
-          {products.map((product) => <a key={product.href} href={product.href} onClick={() => setMobileOpen(false)}>{product.title}</a>)}
-          {navItems.map((item) => <a key={item.href} href={item.href} onClick={() => setMobileOpen(false)}>{item.label}</a>)}
-          <button className="button button-primary" type="button" data-partner-trigger>Become a partner</button>
-        </div>
+        {mobileOpen ? (
+          <div className="shell mobile-nav-inner">
+            <p className="mobile-nav-label">Products</p>
+            {products.map((product) => <a key={product.href} href={product.href} onClick={() => setMobileOpen(false)}>{product.title}</a>)}
+            {navItems.map((item) => <a key={item.href} href={item.href} onClick={() => setMobileOpen(false)}>{item.label}</a>)}
+            <button className="button button-primary" type="button" data-partner-trigger onClick={() => setMobileOpen(false)}>Become a partner</button>
+          </div>
+        ) : null}
       </div>
       <p className="sr-only" role="status" aria-live="polite">{languageStatus}</p>
     </header>
   );
 }
-

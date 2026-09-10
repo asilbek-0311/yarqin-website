@@ -25,7 +25,7 @@ export const products: Product[] = [
     title: "POS Terminals",
     description: "Accept card and QR payments with connected device management.",
     href: "#pos-terminals",
-    image: "/images/product-pos.webp",
+    image: "/images/product-pos.png",
     icon: IdentificationCard,
   },
   {
@@ -33,7 +33,7 @@ export const products: Product[] = [
     title: "ATM Solutions",
     description: "Extend financial access with integrated monitoring and reporting.",
     href: "#atm-solutions",
-    image: "/images/product-atm.webp",
+    image: "/images/product-atm.png",
     icon: Bank,
   },
   {
@@ -41,7 +41,7 @@ export const products: Product[] = [
     title: "Self-Service Terminals",
     description: "Enable 24/7 bill payments, account services, and printed receipts.",
     href: "#self-service-terminals",
-    image: "/images/product-kiosk.webp",
+    image: "/images/product-kiosk.png",
     icon: DeviceMobile,
   },
   {
@@ -49,7 +49,7 @@ export const products: Product[] = [
     title: "QR Payments",
     description: "Connect simple, secure QR payments and cash-out experiences.",
     href: "#qr-payments",
-    image: "/images/product-qr.webp",
+    image: "/images/product-qr.png",
     icon: QrCode,
   },
   {
@@ -57,7 +57,7 @@ export const products: Product[] = [
     title: "Agent Network",
     description: "Bring trusted payments and cash services closer to communities.",
     href: "#agent-network",
-    image: "/images/product-agent.webp",
+    image: "/images/product-agent.png",
     icon: UsersThree,
   },
 ];
@@ -75,28 +75,28 @@ export const audiences: Audience[] = [
     title: "For Banks",
     description: "Expand service channels without rebuilding infrastructure from zero.",
     href: "#for-business",
-    image: "/images/audience-banks.webp",
+    image: "/images/audience-banks.png",
     icon: Bank,
   },
   {
     title: "For Merchants",
     description: "Accept card and QR payments through one reliable platform.",
     href: "#for-business",
-    image: "/images/audience-merchants.webp",
+    image: "/images/audience-merchants.png",
     icon: Storefront,
   },
   {
     title: "For Payment Agents",
     description: "Serve your community with connected payments and local support.",
     href: "#for-business",
-    image: "/images/audience-agents.webp",
+    image: "/images/audience-agents.png",
     icon: UsersThree,
   },
   {
     title: "For Service Providers",
     description: "Connect billing systems to agents, devices, and digital channels.",
     href: "#for-business",
-    image: "/images/audience-providers.webp",
+    image: "/images/audience-providers.png",
     icon: Buildings,
   },
 ];
@@ -129,4 +129,3 @@ export const footerGroups = [
   { title: "Company", links: [{ label: "About us", href: "#about" }, { label: "Technology", href: "#technology" }, { label: "Security", href: "#security" }] },
   { title: "Support", links: [{ label: "Help center", href: "#support" }, { label: "Integration support", href: "#support" }, { label: "Partner inquiries", href: "#partner" }] },
 ] as const;
-
