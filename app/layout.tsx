@@ -5,7 +5,7 @@ import { PrelineLoader } from "@/components/preline-loader";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "YARQINPAY — One payment platform. Multiple channels.",
+  title: "YARQINPAY — Payment infrastructure for modern Afghanistan.",
   description: "Payment technology connecting banks, businesses, service providers, agents, and communities across Afghanistan.",
 };
 

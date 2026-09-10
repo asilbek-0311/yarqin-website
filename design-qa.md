@@ -20,3 +20,7 @@
 Passed. The implementation matches the approved visual hierarchy and art direction, preserves all content from the supplied brief, and remains usable across the tested breakpoints. The prototype metrics are explicitly labeled as illustrative so they cannot be mistaken for verified company claims.
 
 Automated verification: 13 tests passed; ESLint passed with zero warnings; Next.js production build passed.
+
+## Alternate branch
+
+The `concept/network-control-plane` branch was compared directly with its approved dark reference. Desktop and 390 × 844 mobile states preserve the city-and-hardware hero, connected-channel rail, Afghanistan network map, payment lifecycle, reordered product family, trust split, and orange partnership CTA. Responsive sections and browser console also passed inspection.
