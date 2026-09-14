@@ -14,12 +14,29 @@ function renderDialog() {
 }
 
 describe("PartnerDialog", () => {
+  it("traps keyboard focus, locks scrolling, and restores the trigger on Escape", () => {
+    renderDialog();
+    const trigger = screen.getByRole("button", { name: "Become a partner" });
+    trigger.focus();
+    fireEvent.click(trigger);
+    const close = screen.getByRole("button", { name: "Close partner inquiry" });
+    expect(close).toHaveFocus();
+    expect(document.body.style.overflow).toBe("hidden");
+    fireEvent.keyDown(document, { key: "Tab", shiftKey: true });
+    expect(screen.getByRole("button", { name: "Send inquiry" })).toHaveFocus();
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(trigger).toHaveFocus();
+    expect(document.body.style.overflow).not.toBe("hidden");
+  });
   it("opens from any partner trigger and closes accessibly", () => {
     renderDialog();
     fireEvent.click(screen.getByRole("button", { name: "Become a partner" }));
     expect(screen.getByRole("dialog")).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: "Close partner inquiry" }));
+    fireEvent.click(
+      screen.getByRole("button", { name: "Close partner inquiry" }),
+    );
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
@@ -39,13 +56,23 @@ describe("PartnerDialog", () => {
     renderDialog();
     fireEvent.click(screen.getByRole("button", { name: "Become a partner" }));
 
-    fireEvent.change(screen.getByLabelText("Organization"), { target: { value: "Example Bank" } });
-    fireEvent.change(screen.getByLabelText("Contact name"), { target: { value: "Amina Rahimi" } });
-    fireEvent.change(screen.getByLabelText("Work email"), { target: { value: "amina@example.af" } });
-    fireEvent.change(screen.getByLabelText("Partner type"), { target: { value: "Bank" } });
+    fireEvent.change(screen.getByLabelText("Organization"), {
+      target: { value: "Example Bank" },
+    });
+    fireEvent.change(screen.getByLabelText("Contact name"), {
+      target: { value: "Amina Rahimi" },
+    });
+    fireEvent.change(screen.getByLabelText("Work email"), {
+      target: { value: "amina@example.af" },
+    });
+    fireEvent.change(screen.getByLabelText("Partner type"), {
+      target: { value: "Bank" },
+    });
     fireEvent.click(screen.getByRole("button", { name: "Send inquiry" }));
 
-    expect(screen.getByRole("status")).toHaveTextContent("Your inquiry is ready for our partnership team.");
+    expect(screen.getByRole("status")).toHaveTextContent(
+      "Your inquiry is ready for our partnership team.",
+    );
     expect(fetchSpy).not.toHaveBeenCalled();
     fetchSpy.mockRestore();
   });

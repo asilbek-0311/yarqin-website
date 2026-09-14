@@ -1,29 +1,56 @@
-import { LinkedinLogo, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
-import { footerGroups } from "@/lib/content";
+import Link from "next/link";
+import { ArrowUp, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { solutions } from "@/lib/solutions";
 import { Brand } from "./brand";
 
 export function SiteFooter() {
   return (
-    <footer id="support" className="site-footer">
-      <div className="shell footer-grid">
-        <div className="footer-brand">
-          <Brand />
-          <p>Payment technology for a more connected Afghanistan.</p>
-          <div className="social-links">
-            <a href="#support" aria-label="YARQINPAY on LinkedIn"><LinkedinLogo aria-hidden="true" size={20} /></a>
-            <a href="#support" aria-label="YARQINPAY on YouTube"><YoutubeLogo aria-hidden="true" size={20} /></a>
+    <footer className="site-footer" id="about">
+      <div className="shell">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <Brand />
+            <p>
+              Payment technology for a brighter,
+              <br />
+              more connected Afghanistan.
+            </p>
+          </div>
+          <div className="footer-group">
+            <h2>Solutions</h2>
+            {solutions.map((item) => (
+              <Link key={item.slug} href={`/solutions/${item.slug}#top`}>
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <div className="footer-group">
+            <h2>YARQINPAY</h2>
+            <Link href="/#for-business">For business</Link>
+            <Link href="/#technology">Our technology</Link>
+            <Link href="/#security">Security & trust</Link>
+            <Link href="/#support">Questions & answers</Link>
+          </div>
+          <div className="footer-group">
+            <h2>Let’s connect</h2>
+            <button data-partner-trigger>
+              Partnership inquiries{" "}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </button>
+            <p>
+              Built for people.
+              <br />
+              Connected by possibility.
+            </p>
           </div>
         </div>
-        {footerGroups.map((group) => (
-          <div key={group.title} className="footer-group">
-            <h2>{group.title}</h2>
-            {group.links.map((link) => <a key={`${group.title}-${link.label}`} href={link.href}>{link.label}</a>)}
-          </div>
-        ))}
-      </div>
-      <div className="shell footer-bottom">
-        <p>© 2026 YARQINPAY. Prototype experience.</p>
-        <div><a href="#support">Privacy</a><a href="#support">Terms</a><a href="#support">Cookies</a></div>
+        <div className="footer-bottom">
+          <p>© 2026 YARQINPAY. All rights reserved.</p>
+          <span>AFGHANISTAN · ENGLISH</span>
+          <a href="#top">
+            Back to top <ArrowUp size={14} aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </footer>
   );

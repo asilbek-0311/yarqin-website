@@ -5,13 +5,19 @@ import { PrelineLoader } from "@/components/preline-loader";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "YARQINPAY — One payment platform. Multiple channels.",
-  description: "Payment technology connecting banks, businesses, service providers, agents, and communities across Afghanistan.",
+  title: {
+    default: "YARQINPAY — More ways to move forward",
+    template: "%s | YARQINPAY",
+  },
+  description:
+    "Payment technology connecting banks, businesses, service providers, agents, and communities across Afghanistan.",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" data-theme="theme-yarqinpay">
+    <html lang="en" data-theme="theme-yarqinpay" data-scroll-behavior="smooth">
       <body>
         <PrelineLoader />
         {children}

@@ -1,16 +1,23 @@
-import Image from "next/image";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
 export function PartnerCta() {
   return (
-    <section id="partner" className="partner-cta-section">
-      <Image src="/images/afghanistan-landscape.png" alt="A mountain road crossing Afghanistan at sunset" fill sizes="100vw" />
-      <div className="partner-cta-overlay" aria-hidden="true" />
-      <div className="shell partner-cta-grid">
-        <div><p className="eyebrow">PARTNER WITH YARQINPAY</p><h2>Let&apos;s build a more connected Afghanistan.</h2></div>
-        <div><p>Join a growing network of banks, businesses and agents powering financial inclusion across the country.</p><button className="button button-primary" type="button" data-partner-trigger>Become a partner <ArrowRight aria-hidden="true" size={17} weight="bold" /></button></div>
+    <section className="partner-cta-section" id="partner">
+      <div className="shell">
+        <p className="eyebrow">THE NEXT CHAPTER STARTS TOGETHER</p>
+        <h2>
+          Let’s move
+          <br />
+          <span>forward.</span>
+        </h2>
+        <button className="button button-white" data-partner-trigger>
+          Become a partner <ArrowUpRight size={21} aria-hidden="true" />
+        </button>
+        <p>
+          More connected businesses.
+          <br />A more connected Afghanistan.
+        </p>
       </div>
-      <p className="partner-mantra">PEOPLE<br />PAYMENTS<br />POSSIBILITIES</p>
     </section>
   );
 }
