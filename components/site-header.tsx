@@ -84,11 +84,10 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
             {productsOpen ? (
               <div className="mega-menu hs-dropdown-menu">
                 <div>
-                  <p className="eyebrow">PAYMENT CHANNELS</p>
-                  <h2>One platform for every payment touchpoint.</h2>
+                  <h2>Find your solution.</h2>
                 </div>
                 <div className="mega-links">
-                  {products.map(({ id, title, description, icon: Icon }) => (
+                  {products.map(({ id, title, icon: Icon }) => (
                     <Link
                       key={id}
                       href={`/solutions/${id}#top`}
@@ -97,7 +96,6 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
                       <Icon aria-hidden="true" size={24} />
                       <span>
                         <strong>{title}</strong>
-                        <small>{description}</small>
                       </span>
                       <ArrowRight aria-hidden="true" size={15} />
                     </Link>

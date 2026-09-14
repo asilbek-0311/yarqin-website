@@ -4,6 +4,13 @@ import { SolutionShowcase, BusinessShowcase } from "./solution-showcase";
 import { solutions } from "@/lib/solutions";
 
 describe("solution journey", () => {
+  it("keeps carousel focus on its control while the artwork changes", () => {
+    render(<SolutionShowcase />);
+    const next = screen.getByRole("button", { name: "Next solution" });
+    next.focus();
+    fireEvent.click(next);
+    expect(screen.getByRole("button", { name: "Next solution" })).toHaveFocus();
+  });
   it("switches content and detail destinations for every channel", () => {
     render(<SolutionShowcase />);
     solutions.forEach((solution, index) => {

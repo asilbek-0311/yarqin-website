@@ -6,7 +6,7 @@ export const solutions = [
     number: "01",
     headline: "Good business.\nGreat payments.",
     description:
-      "At the counter or on the move. Accept card and QR payments with a terminal that keeps your business connected.",
+      "Accept card and QR payments, at the counter or on the move.",
     image: "/images/chrome-pos.png",
     audience: "Made for merchants",
     features: [
@@ -34,7 +34,7 @@ export const solutions = [
     number: "02",
     headline: "A small code.\nA big possibility.",
     description:
-      "Turn a simple scan into a payment. Bring an accessible digital checkout to your counter, service point, or community.",
+      "Simple scan-to-pay for your counter or service point.",
     image: "/images/chrome-qr.png",
     audience: "Made for everyday commerce",
     features: [
@@ -58,7 +58,7 @@ export const solutions = [
     number: "03",
     headline: "Your bank.\nBeyond the branch.",
     description:
-      "Extend access to cash and banking services with connected ATMs, supported by integrated monitoring and reporting.",
+      "Bring cash and banking services closer with connected ATMs.",
     image: "/images/chrome-atm.png",
     audience: "Made for banks",
     features: [
@@ -86,7 +86,7 @@ export const solutions = [
     number: "04",
     headline: "On their time.\nOn your network.",
     description:
-      "Give people a convenient way to pay bills and access account services, with self-service terminals designed for everyday use.",
+      "Bill payments and account services, on your customers’ schedule.",
     image: "/images/chrome-kiosk.png",
     audience: "Made for service providers",
     features: ["Bill payments", "Account services", "Printed receipts"],
@@ -110,7 +110,7 @@ export const solutions = [
     number: "05",
     headline: "Closer to people.\nFurther together.",
     description:
-      "Bring payments and cash services into the neighborhood, with local agents connecting communities to financial services.",
+      "Local agents. Payments and cash services closer to home.",
     image: "/images/chrome-network.png",
     audience: "Made for communities",
     features: [
@@ -137,28 +137,28 @@ export const businessStories = [
   {
     name: "Banks",
     title: "Grow your reach.\nNot your complexity.",
-    copy: "Connect new payment channels to your existing infrastructure. Bring banking to more counters, neighborhoods, and communities.",
+    copy: "Reach more communities through payment channels connected to your bank.",
     slug: "atm-solutions",
     link: "Explore ATM solutions",
   },
   {
     name: "Merchants",
     title: "More ways to pay.\nMore room to grow.",
-    copy: "From your first counter to your next location, make accepting payments a simple part of doing business.",
+    copy: "Simple payments, from your first counter to your next location.",
     slug: "pos-terminals",
     link: "Explore merchant payments",
   },
   {
     name: "Payment agents",
     title: "Your neighborhood.\nNew possibilities.",
-    copy: "Become a local connection to financial services. Help people make payments and access cash, closer to home.",
+    copy: "Help your community pay and access cash, closer to home.",
     slug: "agent-network",
     link: "Explore the agent network",
   },
   {
     name: "Service providers",
     title: "Your services.\nWithin easy reach.",
-    copy: "Connect billing and account services to digital and physical channels, so your customers can choose how they pay.",
+    copy: "Bring billing and account services to the channels your customers use.",
     slug: "self-service-terminals",
     link: "Explore self-service",
   },

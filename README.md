@@ -22,6 +22,8 @@ Open http://localhost:3000. For a production check, run `npm run build` and `npm
 
 Every detail page has its own metadata, product story, next steps, related solutions, and partner CTA. Product content lives in `lib/solutions.ts`. The original alternate design branch is unchanged.
 
+Framer Motion adds scroll-linked chrome artwork, staggered section entrances, spring hover/tap feedback, and animated solution selection. Native scrolling is preserved. Reduced-motion preferences disable spatial effects, and server-rendered content stays visible before JavaScript loads. Shared motion components live in `components/motion.tsx` and `components/reveal.tsx`.
+
 Partner inquiries validate locally and display a preview confirmation. They are **not transmitted or persisted**. No payment processing, authentication, or production integrations are included. English is implemented; the language menu labels Dari and Pashto as upcoming previews. Generated QR imagery is illustrative and is not a payment destination. No unverified business metrics or certification claims are shown.
 
 ## Checks

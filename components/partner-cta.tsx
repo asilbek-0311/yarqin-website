@@ -1,22 +1,21 @@
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { MotionCta } from "./motion";
+import { Reveal } from "./reveal";
 
 export function PartnerCta() {
   return (
     <section className="partner-cta-section" id="partner">
       <div className="shell">
-        <p className="eyebrow">THE NEXT CHAPTER STARTS TOGETHER</p>
-        <h2>
-          Let’s move
-          <br />
-          <span>forward.</span>
-        </h2>
-        <button className="button button-white" data-partner-trigger>
-          Become a partner <ArrowUpRight size={21} aria-hidden="true" />
-        </button>
-        <p>
-          More connected businesses.
-          <br />A more connected Afghanistan.
-        </p>
+        <Reveal>
+          <h2>
+            Let’s move
+            <br />
+            <span>forward.</span>
+          </h2>
+          <MotionCta>
+            Become a partner <ArrowUpRight size={21} aria-hidden="true" />
+          </MotionCta>
+        </Reveal>
       </div>
     </section>
   );

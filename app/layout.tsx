@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { PartnerDialog } from "@/components/partner-dialog";
 import { PrelineLoader } from "@/components/preline-loader";
+import { MotionProvider } from "@/components/motion";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -20,8 +21,10 @@ export default function RootLayout({
     <html lang="en" data-theme="theme-yarqinpay" data-scroll-behavior="smooth">
       <body>
         <PrelineLoader />
-        {children}
-        <PartnerDialog />
+        <MotionProvider>
+          {children}
+          <PartnerDialog />
+        </MotionProvider>
       </body>
     </html>
   );

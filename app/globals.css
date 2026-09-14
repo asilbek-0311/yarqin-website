@@ -100,7 +100,7 @@ h2 {
   text-transform: uppercase;
 }
 .section-intro {
-  font-size: 18px;
+  font-size: 22px;
   color: var(--copy-muted);
   line-height: 1.65;
   margin-top: 27px;
@@ -113,7 +113,7 @@ h2 {
   min-height: 56px;
   padding: 0 26px;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   border: 1px solid transparent;
   transition:
@@ -128,6 +128,9 @@ h2 {
 }
 .button:hover {
   transform: translateY(-2px);
+}
+.button[data-motion]:hover {
+  transform: none;
 }
 .button-white {
   background: white;
@@ -150,7 +153,7 @@ h2 {
   padding: 12px 0;
   background: none;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
 }
 .text-link:hover {
@@ -209,7 +212,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 700;
   letter-spacing: -0.055em;
   white-space: nowrap;
@@ -234,7 +237,7 @@ h2 {
   min-height: 44px;
   padding: 0;
   background: none;
-  font-size: 13px;
+  font-size: 16px;
   white-space: nowrap;
 }
 .nav-link:hover {
@@ -251,13 +254,13 @@ h2 {
   gap: 5px;
   height: 44px;
   padding: 0;
-  font-size: 12px;
+  font-size: 15px;
   background: none;
 }
 .header-cta {
   min-height: 42px;
   padding: 0 17px;
-  font-size: 12px;
+  font-size: 15px;
   border-radius: 9px;
 }
 .header-on-orange {
@@ -334,7 +337,7 @@ h2 {
 .mega-links strong {
   display: block;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 .mega-links small {
@@ -395,6 +398,17 @@ h2 {
   object-fit: contain;
   object-position: center;
 }
+.motion-art-plane,
+.motion-art-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.benefit-art {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 16px;
+}
 .hero-content {
   position: relative;
   padding-top: 146px;
@@ -423,7 +437,8 @@ h2 {
   color: white;
 }
 .hero-description {
-  font-size: 17px;
+  font-size: 22px;
+  max-width: 440px;
   line-height: 1.65;
   margin: 26px 0 28px;
   color: #32190e;
@@ -435,7 +450,7 @@ h2 {
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 10px;
   letter-spacing: 0.015em;
   color: #32190e;
@@ -484,14 +499,14 @@ h2 {
   margin: 0 auto 16px;
 }
 .benefit-row h3 {
-  font-size: 19px;
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.035em;
   margin-bottom: 12px;
 }
 .benefit-row p {
   color: var(--copy-muted);
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.7;
 }
 .solutions-section {
@@ -510,17 +525,20 @@ h2 {
 }
 .solution-tabs {
   display: flex;
+  overflow-x: auto;
   gap: 8px;
   margin-top: 46px;
   padding-bottom: 25px;
   border-bottom: 1px solid var(--line);
 }
 .solution-tabs button {
+  position: relative;
+  isolation: isolate;
   display: flex;
   gap: 10px;
   align-items: center;
   padding: 13px 19px;
-  font-size: 13px;
+  font-size: 17px;
   border-radius: 30px;
   color: #737378;
   background: none;
@@ -530,12 +548,20 @@ h2 {
     color 0.2s;
 }
 .solution-tabs button span {
-  font-size: 9px;
+  font-size: 13px;
   opacity: 0.65;
 }
 .solution-tabs button[aria-selected="true"] {
   color: #fff;
+  background: transparent;
+}
+.tab-active-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: var(--ink);
+  border-radius: 30px;
+  pointer-events: none;
 }
 .solution-tabs button:not([aria-selected="true"]):hover {
   background: var(--paper);
@@ -550,7 +576,6 @@ h2 {
 }
 .solution-copy {
   padding: 54px 0 20px;
-  animation: enter 0.5s;
 }
 .solution-copy .eyebrow {
   color: var(--copy-muted);
@@ -567,8 +592,11 @@ h2 {
   max-width: 400px;
   margin-top: 20px;
   color: var(--copy-muted);
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.75;
+}
+.solution-copy .button {
+  margin-top: 30px;
 }
 .solution-copy ul {
   margin: 23px 0 28px;
@@ -601,7 +629,10 @@ h2 {
   background: var(--paper);
   border-radius: 20px;
   overflow: hidden;
-  animation: enter 0.5s;
+}
+.solution-image-plane {
+  position: absolute;
+  inset: 0;
 }
 .solution-visual img {
   object-fit: cover;
@@ -672,7 +703,7 @@ h2 {
   color: var(--copy-muted);
 }
 .connection-line p {
-  font-size: 17px;
+  font-size: 21px;
   line-height: 1.6;
   margin-top: 15px;
 }
@@ -691,7 +722,7 @@ h2 {
   display: block;
   color: var(--copy-muted);
   font-weight: 400;
-  font-size: 10px;
+  font-size: 15px;
   letter-spacing: 0;
   margin-top: 11px;
 }
@@ -731,7 +762,7 @@ h2 {
   border-bottom: 1px solid #d0d0d5;
   background: none;
   text-align: left;
-  font-size: 15px;
+  font-size: 21px;
   color: #85858b;
 }
 .business-options button[aria-pressed="true"] {
@@ -752,7 +783,6 @@ h2 {
   padding: 40px;
   border-radius: 20px;
   min-height: 535px;
-  animation: enter 0.45s;
 }
 .story-number {
   font-size: 15px;
@@ -770,13 +800,13 @@ h2 {
 }
 .business-story > p {
   margin: 23px 0 29px;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.75;
   color: white;
 }
 .business-story .button {
   min-height: 50px;
-  font-size: 12px;
+  font-size: 17px;
   padding-inline: 20px;
 }
 .story-bottom {
@@ -804,7 +834,7 @@ h2 {
   font-size: 44px;
 }
 .security-section .section-intro {
-  font-size: 15px;
+  font-size: 21px;
   margin-top: 22px;
 }
 .security-details {
@@ -823,13 +853,13 @@ h2 {
 }
 .security-details strong {
   display: block;
-  font-size: 13px;
+  font-size: 21px;
   color: var(--ink);
   font-weight: 600;
   margin-bottom: 5px;
 }
 .security-details p {
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.65;
   color: var(--copy-muted);
 }
@@ -854,7 +884,7 @@ h2 {
   justify-content: space-between;
   gap: 20px;
   padding: 23px 0;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   list-style: none;
 }
@@ -871,7 +901,7 @@ h2 {
 }
 .faq-list details p {
   padding-bottom: 23px;
-  font-size: 13px;
+  font-size: 18px;
   color: var(--copy-muted);
   line-height: 1.8;
 }
@@ -920,7 +950,7 @@ h2 {
 .footer-group p {
   margin-top: 20px;
   color: var(--copy-muted);
-  font-size: 11px;
+  font-size: 16px;
   line-height: 1.8;
 }
 .footer-group {
@@ -931,13 +961,13 @@ h2 {
 }
 .footer-group h2 {
   margin-bottom: 6px;
-  font-size: 11px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0;
 }
 .footer-group a,
 .footer-group button {
-  font-size: 11px;
+  font-size: 16px;
   color: var(--copy-muted);
   background: none;
   padding: 0;
@@ -962,10 +992,10 @@ h2 {
   border-top: 1px solid var(--line);
   padding-top: 24px;
   color: #88888e;
-  font-size: 9px;
+  font-size: 13px;
 }
 .footer-bottom > span {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 .footer-bottom a {
@@ -984,7 +1014,7 @@ h2 {
   align-items: center;
   gap: 10px;
   color: var(--copy-muted);
-  font-size: 12px;
+  font-size: 16px;
   padding: 10px 0;
 }
 .detail-hero-grid {
@@ -1004,7 +1034,7 @@ h2 {
   letter-spacing: -0.06em;
 }
 .detail-hero .section-intro {
-  font-size: 16px;
+  font-size: 21px;
 }
 .detail-hero .button {
   margin-top: 30px;
@@ -1036,7 +1066,7 @@ h2 {
 .detail-benefits > div p {
   display: flex;
   gap: 10px;
-  font-size: 13px;
+  font-size: 18px;
   align-items: center;
 }
 .detail-benefits svg {
@@ -1062,7 +1092,7 @@ h2 {
   margin: 20px 0 12px;
 }
 .detail-steps article p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.8;
   color: var(--copy-muted);
 }
@@ -1185,17 +1215,6 @@ h2 {
   line-height: 1.7;
 }
 
-.reveal-ready {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.8s,
-    transform 0.8s;
-}
-.reveal-visible {
-  opacity: 1;
-  transform: none;
-}
 @keyframes enter {
   from {
     opacity: 0;
@@ -1221,7 +1240,7 @@ h2 {
     gap: 16px;
   }
   .nav-link {
-    font-size: 11px;
+    font-size: 16px;
   }
   .header-inner {
     gap: 16px;
@@ -1246,7 +1265,7 @@ h2 {
     padding-inline: 15px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .desktop-nav {
     display: none;
   }
@@ -1274,7 +1293,7 @@ h2 {
   .mobile-nav-inner a {
     border-bottom: 1px solid var(--line);
     padding: 13px 0;
-    font-size: 14px;
+    font-size: 19px;
   }
   .mobile-nav-inner .button {
     margin-top: 20px;
@@ -1293,7 +1312,7 @@ h2 {
     gap: 14px;
   }
   .connection-line p {
-    font-size: 13px;
+    font-size: 18px;
   }
   .platform-wordmark {
     font-size: 27px;
@@ -1310,7 +1329,7 @@ h2 {
     height: 72px;
   }
   .brand {
-    font-size: 16px;
+    font-size: 20px;
   }
   .brand-mark {
     width: 25px;
@@ -1341,13 +1360,13 @@ h2 {
     letter-spacing: -0.065em;
   }
   .hero-description {
-    font-size: 14px;
+    font-size: 20px;
     margin-top: 24px;
     margin-bottom: 23px;
   }
   .hero-content .button {
     min-height: 51px;
-    font-size: 12px;
+    font-size: 17px;
     padding-inline: 20px;
   }
   .hero-art {
@@ -1383,7 +1402,7 @@ h2 {
     margin-bottom: 20px;
   }
   .section-intro {
-    font-size: 14px;
+    font-size: 20px;
     margin-top: 23px;
   }
   .desktop-break {
@@ -1401,18 +1420,23 @@ h2 {
     gap: 0 18px;
     align-items: start;
   }
-  .benefit-row img {
+  .benefit-art {
     grid-row: span 2;
     margin: 0;
     width: 65px;
     height: 65px;
   }
+  .benefit-row img {
+    width: 65px;
+    height: 65px;
+    margin: 0;
+  }
   .benefit-row h3 {
     margin-bottom: 7px;
-    font-size: 16px;
+    font-size: 22px;
   }
   .benefit-row p {
-    font-size: 12px;
+    font-size: 18px;
   }
   .benefit-row br {
     display: initial;
@@ -1433,7 +1457,7 @@ h2 {
   }
   .solution-tabs button {
     padding: 12px 15px;
-    font-size: 12px;
+    font-size: 17px;
   }
   .solution-panel {
     grid-template-columns: 1fr;
@@ -1447,7 +1471,7 @@ h2 {
     font-size: 38px;
   }
   .solution-description {
-    font-size: 14px;
+    font-size: 20px;
   }
   .solution-copy ul {
     gap: 10px 15px;
@@ -1458,10 +1482,10 @@ h2 {
   }
   .solution-copy .button {
     min-height: 50px;
-    font-size: 12px;
+    font-size: 17px;
   }
   .solution-visual {
-    min-height: 365px;
+    min-height: 0;
     border-radius: 15px;
   }
   .solution-visual img {
@@ -1491,7 +1515,7 @@ h2 {
     margin-top: 38px;
   }
   .connection-line p {
-    font-size: 17px;
+    font-size: 21px;
     margin-top: 10px;
   }
   .connection-arrow {
@@ -1525,7 +1549,7 @@ h2 {
   }
   .business-options button {
     padding: 15px 0;
-    font-size: 13px;
+    font-size: 20px;
   }
   .business-story {
     min-height: 460px;
@@ -1535,7 +1559,7 @@ h2 {
     font-size: 36px;
   }
   .business-story > p {
-    font-size: 13px;
+    font-size: 19px;
   }
   .security-section {
     grid-template-columns: 1fr;
@@ -1549,7 +1573,7 @@ h2 {
     font-size: 37px;
   }
   .security-section .section-intro {
-    font-size: 14px;
+    font-size: 20px;
   }
   .faq-section {
     grid-template-columns: 1fr;
@@ -1560,11 +1584,11 @@ h2 {
     font-size: 39px;
   }
   .faq-list summary {
-    font-size: 13px;
+    font-size: 20px;
     padding: 20px 0;
   }
   .faq-list details p {
-    font-size: 12px;
+    font-size: 18px;
   }
   .partner-cta-section {
     padding: 65px 0 55px;
@@ -1578,7 +1602,7 @@ h2 {
   }
   .partner-cta-section .button {
     min-height: 52px;
-    font-size: 12px;
+    font-size: 17px;
   }
   .site-footer {
     padding-top: 50px;
@@ -1599,7 +1623,7 @@ h2 {
   }
   .footer-bottom {
     flex-wrap: wrap;
-    font-size: 8px;
+    font-size: 13px;
   }
   .footer-bottom > span {
     display: none;
@@ -1617,7 +1641,7 @@ h2 {
     font-size: 46px;
   }
   .detail-hero .section-intro {
-    font-size: 15px;
+    font-size: 20px;
   }
   .detail-art {
     height: 380px;
@@ -1647,7 +1671,7 @@ h2 {
     margin-top: 12px;
   }
   .detail-steps article p {
-    font-size: 13px;
+    font-size: 18px;
   }
   .related-solutions {
     padding-bottom: 70px;
@@ -1682,7 +1706,7 @@ h2 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
-  .reveal-ready {
+  .reveal {
     opacity: 1;
     transform: none;
   }
