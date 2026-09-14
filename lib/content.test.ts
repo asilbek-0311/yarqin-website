@@ -30,11 +30,10 @@ describe("site content", () => {
   });
 
   it("does not present unsupported languages as translated", () => {
-    expect(languages).toEqual([
+    expect(languages).toMatchObject([
       { code: "EN", label: "English", available: true },
       { code: "DR", label: "Dari", available: false },
       { code: "PS", label: "Pashto", available: false },
     ]);
   });
 });
-

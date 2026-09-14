@@ -14,7 +14,7 @@ describe("solution journey", () => {
   it("switches content and detail destinations for every channel", () => {
     render(<SolutionShowcase />);
     solutions.forEach((solution, index) => {
-      fireEvent.click(screen.getAllByRole("tab")[index]);
+      fireEvent.click(screen.getByRole("tab", { name: solution.short }));
       expect(screen.getAllByRole("tab")[index]).toHaveAttribute(
         "aria-selected",
         "true",

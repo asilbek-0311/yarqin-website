@@ -24,7 +24,7 @@ it("keeps artwork stationary and solution switching immediate with reduced motio
       <SolutionShowcase />
     </MotionProvider>,
   );
-  fireEvent.click(screen.getByRole("tab", { name: "02 QR payments" }));
+  fireEvent.click(screen.getByRole("tab", { name: "QR payments" }));
   await act(async () => { await new Promise(requestAnimationFrame); });
   expect(screen.getByRole("link", { name: "Explore QR payments" })).toBeVisible();
   expect(container.querySelector(".motion-art-plane")).toHaveStyle({ transform: "none" });

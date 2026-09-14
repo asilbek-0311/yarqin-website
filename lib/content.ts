@@ -118,9 +118,9 @@ export const audienceStrip = [
 ] as const;
 
 export const languages = [
-  { code: "EN", label: "English", available: true },
-  { code: "DR", label: "Dari", available: false },
-  { code: "PS", label: "Pashto", available: false },
+  { code: "EN", label: "English", flag: "🇬🇧", available: true },
+  { code: "DR", label: "Dari", flag: "🇦🇫", available: false },
+  { code: "PS", label: "Pashto", flag: "🇦🇫", available: false },
 ] as const;
 
 export const footerGroups = [

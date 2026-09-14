@@ -3,7 +3,6 @@
 import {
   ArrowRight,
   CaretDown,
-  GlobeHemisphereWest,
   List,
   X,
 } from "@phosphor-icons/react";
@@ -120,7 +119,7 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
               aria-expanded={languageOpen}
               onClick={() => setLanguageOpen((open) => !open)}
             >
-              <GlobeHemisphereWest aria-hidden="true" size={17} /> EN{" "}
+              <span className="language-flag" aria-hidden="true">🇬🇧</span> EN{" "}
               <CaretDown aria-hidden="true" size={12} />
             </button>
             {languageOpen ? (
@@ -133,7 +132,10 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
                       chooseLanguage(language.label, language.available)
                     }
                   >
-                    <span>{language.label}</span>
+                    <span className="language-option-label">
+                      <span className="language-flag" aria-hidden="true">{language.flag}</span>
+                      {language.label}
+                    </span>
                     <small>
                       {language.available ? "Selected" : "Preview soon"}
                     </small>

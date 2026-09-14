@@ -57,7 +57,6 @@ export function SolutionShowcase() {
                   transition={{ type: "spring", stiffness: 380, damping: 34 }}
                 />
               ) : null}
-              <span>{item.number}</span>
               {item.short}
             </motion.button>
           ))}
